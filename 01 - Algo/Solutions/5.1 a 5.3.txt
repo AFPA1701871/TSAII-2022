@@ -1,0 +1,25 @@
+
+5.1
+RÉPÉTER
+    REQUÊTE " Entrer un nombre : " ,nb 
+JUSQU'À nb>=1 et nb<=3
+
+ÉCRIRE " Merci " 
+
+5.2
+RÉPÉTER
+    REQUÊTE "Entrez un nombre :" , nb
+	SI nb > 20 ALORS
+		ÉCRIRE "plus petit"
+	SINON SI nb < 10 ALORS
+		ÉCRIRE "plus grand"
+       FINSI           
+JUSQU'À nb >= 10 ET nb <=20
+    
+ÉCRIRE "correct"
+
+5.3
+REQUÊTE "Entrez un nombre :" , nb
+POUR i = 1 JUSQU'À 10 FAIRE
+    ÉCRIRE nb+i
+FINPOUR
