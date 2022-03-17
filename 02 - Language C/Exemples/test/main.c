@@ -3,10 +3,42 @@
 
 int main()
 {
-    int nombre = 0; // on initialise la variable a 0
+    int age ;
+    printf("Entrer votre age");
+    scanf("%d",&age);
+    if (age>=18)
+    {
+        printf("vous etes adulte\n");
 
-    printf("Ecrire un nombre: ");
-    scanf ("%d",&nombre); // on demande d'entrer un nombre
-    printf ("Le calcul du nombre au carré est de : %d", pow(nombre,2));
+    }
+    else
+    {
+        printf("vous etes mineur\n");
+    }
+
+    switch(age)
+    {
+    case 6 :
+    case 7:
+        printf("poussin");
+        break;
+    case 8 :
+        printf("pupille");
+        break;
+    case 9:
+        printf("pupille");
+        break;
+    default:
+        printf("autre");
+        break;
+
+    }
+    printf("\n");
+
+    int i;
+    i = (age>=18)?1:0;
+    printf("%d",i);
+
+
     return 0;
 }
