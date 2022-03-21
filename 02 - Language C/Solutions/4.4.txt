@@ -1,0 +1,61 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int nb;
+    double prix;
+
+    printf("Nombre de photocopies : ");
+    scanf("%d",&nb);
+    if (nb<=10)
+    {
+        prix=nb*0.10;
+    }
+    else    if (nb<=30)
+            {
+                prix=10*0.10+(nb-10)*0.09;
+            }
+            else
+            {
+                prix=10*0.10 + 20*0.09 + (nb-30)*0.08;
+            }
+    // prix = nb<=10?nb*0.10:nb<=30?10*0.10+(nb-10)*0.09:10*0.10 + 20*0.09 + (nb-30)*0.08;
+    printf("Votre facture est de %f",prix);
+    return 0;
+}
+
+Programme variabilisé : 
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+
+{
+    int nb;
+    double prix;
+    double tarif1=0.10, tarif2=0.09,tarif3=0.08;
+    int borne1=10, borne2=30;
+
+    printf("Nombre de photocopies : ");
+    scanf("%d",&nb);
+    if (nb<=borne1)
+    {
+        prix=nb*tarif1;
+    }
+    else    if (nb<=borne2)
+    {
+        prix=borne1*tarif1+(nb-borne1)*tarif2;
+    }
+    else
+    {
+        prix=borne1*tarif1 + (borne2-borne1)*tarif2 + (nb-borne2)*tarif3;
+    }
+    // prix = nb<=borne1?nb*tarif1:nb<=borne2?borne1*tarif1+(nb-borne1)*0.09:borne1*tarif1 + (borne2-borne1)*tarif2 + (nb-borne2)*tarif3;
+
+
+
+    printf("Votre facture est de %f",prix);
+    return 0;
+}

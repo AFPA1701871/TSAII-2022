@@ -1,0 +1,55 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int prixHt,nb, total, tva;
+    double prixTtc, tauxTva;
+
+    printf("Entrez le prix ht\n");
+    scanf( "%d", &prixHt);
+    printf("Entrez le nombre d'article  \n");
+    scanf( "%d", &nb);
+
+    total=prixHt*nb;
+    printf("prix total de tous les articles est de %d euros\n",total);
+
+    printf("indiquez la tva en %% \n");
+    scanf( "%d", &tva);
+
+    tauxTva=tva/100.0;
+    printf("la taxe  est donc de %f \n",tauxTva);
+
+    prixTtc=total*(1+tauxTva);
+    printf("le prix ttc est de %f \n",prixTtc);
+
+    return 0;
+}
+
+Version courte
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int prix = 0;
+    int nombre = 0;
+    int taux_tva = 0 ;
+
+    printf("Donnez le prix HT de l'article : ");
+    scanf("%d",&prix);
+    printf("\n");
+
+    printf("donnez le nombre d'article : ");
+    scanf("%d",&nombre);
+    printf("\n");
+
+    printf("Donnez la TVA : ");
+    scanf("%d",&taux_tva);
+    printf("\n");
+
+    printf("Le prix total TTC est de : %f",(((taux_tva / 100.0) * prix) + prix) * nombre);
+
+    return 0;
+}
