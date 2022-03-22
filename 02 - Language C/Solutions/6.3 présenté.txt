@@ -1,0 +1,48 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+
+    int notes[4];
+    int i;
+    char trait[50]="";
+    int posTrait=0;
+
+    //saisie des notes
+    for (i=0; i<4; i++)
+    {
+        printf("Entrer la note %d : ",i+1);
+        scanf("%d",&notes[i]);
+        if (notes[i]<10)
+        {
+            trait[posTrait]='-';
+            posTrait++;
+            trait[posTrait]='-';
+            posTrait++;
+            trait[posTrait]='-';
+            posTrait++;
+        }
+        else{
+            trait[posTrait]='-';
+            posTrait++;
+            trait[posTrait]='-';
+            posTrait++;
+
+            trait[posTrait]='-';
+            posTrait++;
+        }
+    }
+
+
+    printf("%s\n",trait);
+    // affichage des notes
+    for (i=0; i<4; i++)
+    {
+        printf("%d |",notes[i]);
+    }
+    printf("\n%s\n",trait);
+
+
+    return 0;
+}

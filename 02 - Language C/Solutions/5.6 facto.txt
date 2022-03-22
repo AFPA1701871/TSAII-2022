@@ -1,0 +1,23 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+
+    int valeurSaisie;
+    int i;
+    int facto=1;
+
+    // Demander la valeur à l'utilisateur
+    printf("Entrer une valeur : ");
+    scanf("%d",&valeurSaisie);
+
+    // Calcul de la factorielle
+    for(i=1;i<=valeurSaisie;i++)
+    {
+        facto *= i;  // facto = facto * i
+    }
+
+   printf("%d! = %d", valeurSaisie, facto);
+    return 0;
+}
