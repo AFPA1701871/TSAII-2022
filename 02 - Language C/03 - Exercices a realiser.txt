@@ -20,3 +20,16 @@ Reprendre les exercices faits en LARP
 6.10
 6.14
 
+fonction factorielle // renvoi le calcul de la factorielle du nombre passé en paramètre
+int factorielle (int nb);
+
+
+fonction compteVoyelle // compte le nombre de voyelles dans un tableau de caractères
+int compteVoyelle(char tab[], int taille)
+
+fonction demandeCoordonnees  // demande des coordonnées en x et y compris entre 1 et 3
+int[] demandeCoordonnees()
+
+fonction triTableau // tri le tableau par ordre croissant
+void triTableau(int tab[], int taille)
+

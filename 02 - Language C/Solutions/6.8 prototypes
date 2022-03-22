@@ -1,0 +1,71 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int demanderNombre();
+void remplirTableau(int tab[],int taille);
+void afficherTableau(int tab[],int taille);
+
+
+
+int main()
+{
+    int taille; //taille du tableau
+    int i, positif=0, negatif=0;
+
+    printf("Entrer la taille :");
+    taille= demanderNombre();
+    int tableau[taille];
+
+    remplirTableau(tableau,taille);
+
+    for(i=0; i<taille; i++)
+    {
+        if (tableau[i]>=0)
+        {
+            positif++;
+        }
+        else
+        {
+            negatif++;
+        }
+    }
+
+    afficherTableau(tableau,taille);
+    printf("\n %d positifs %d negatifs",positif,negatif);
+    return 0;
+}
+
+void remplirTableau(int tab[],int taille)
+{
+    int i;
+    for (i=0; i<taille; i++)
+    {
+        printf("Entrer un nombre n %d : ",i+1);
+        tab[i]=demanderNombre();
+    }
+}
+
+
+int demanderNombre()
+{
+    int nb;
+    int retour; // boolean qui me permet de savoir si la saisie est correcte
+    do
+    {
+        fflush(stdin); //on vide les caratères dans le buffer d'entrée du clavier
+        retour=scanf("%d",&nb); // on recupere le retour du scanf pour savoir si l'utilisateur a saisi ce que l'on attendait
+        //sinon, on boucle
+    }
+    while(retour==0);
+    return nb;
+}
+
+
+void afficherTableau(int tab[],int taille)
+{
+    int i;
+    for(i=0; i<taille; i++)
+    {
+        printf("%d |",tab[i]);
+    }
+}
