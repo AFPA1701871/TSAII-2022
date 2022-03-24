@@ -1,0 +1,45 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+int compteVoyelle (char tablo[], int taille)
+{
+    int i,nbVoyelle=0;
+    char lettreAlea;
+    srand(time(NULL)); // initialiser le calcul du random
+    for(i=0; i<taille; i++)
+    {
+        lettreAlea=((rand()% 26)+65); // détermine au hasard un nombre aléatoire entre 65 et 91 qui correspondent au A et Z
+        tablo[i]=lettreAlea;
+        printf("%c\n",tablo[i]);
+        /*if(tablo[i]=='A' || tablo[i]=='E' || tablo[i]=='I' || tablo[i]=='O' || tablo[i]=='U' || tablo[i]=='Y' )
+        {
+            nbVoyelle++;
+        }*/
+        switch(tablo[i])
+        {
+        case 'A':
+        case 'E':
+        case 'I':
+        case 'O':
+        case 'U':
+        case 'Y':
+            nbVoyelle++;
+            break;
+
+        }
+    }
+    return nbVoyelle;
+}
+
+int main()
+{
+    int taille,i,nbVoyelle;
+    printf("Quelle est la taille du tableau : ");
+    scanf("%d",&taille);
+    char tab[taille];
+    nbVoyelle = compteVoyelle(tab, taille);
+    printf("Il y a %d voyelles dans le tableau",nbVoyelle);
+
+    return 0;
+}

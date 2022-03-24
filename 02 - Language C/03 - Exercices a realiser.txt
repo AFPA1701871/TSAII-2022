@@ -25,7 +25,7 @@ int factorielle (int nb);
 
 
 fonction compteVoyelle // compte le nombre de voyelles dans un tableau de caractères
-int compteVoyelle(char tab[], int taille)
+int compteVoyelle(char tableau[], int tailleTableau)
 
 fonction demandeCoordonnees  // demande des coordonnées en x et y compris entre 1 et 3
 int[] demandeCoordonnees()
