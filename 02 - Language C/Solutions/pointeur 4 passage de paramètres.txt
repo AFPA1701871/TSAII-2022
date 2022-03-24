@@ -1,0 +1,29 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+
+int AjouteUn(int nb) // passage de paramètres par valeur, la variable n'est pas modifiée
+{
+    nb++;
+    return nb;
+
+}
+
+void AjouteUnDirect(int* pNb) // passage de paramètre par référence, la valeur de la variable est modifiée
+{
+    (*pNb)++;
+}
+
+int main()
+{
+   int a =3;
+   int b=4;
+   a=AjouteUn(a);       // appel par valeur
+   printf("a vaut %d\n", a); 
+   
+   
+   AjouteUnDirect(&b);  // appel par référence, on envoi l'adresse de la variable
+
+   printf("b vaut %d", b);
+   return 0;
+}

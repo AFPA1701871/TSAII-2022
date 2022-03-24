@@ -1,0 +1,31 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int a,b,c;
+    int* pA,* pB,* pC;
+    pA=&a,pB=&b,pC=&c;
+    printf("Veuillez saisir une premiere valeur : ");
+    scanf("%d",pA);
+    printf("Veuillez saisir une seconde valeur : ");
+    scanf("%d",pB);
+    printf("Veuillez saisir une troisieme valeur : ");
+    scanf("%d",pC);
+    if (*pA>=*pB && *pA>=*pC)
+    {
+        printf("La plus grande valeur est %d",*pA);
+    }
+    else if (*pB>=*pA && *pB>=*pC)
+    {
+        printf("La plus grande valeur est %d",*pB);
+    }
+    else
+    {
+        printf("La plus grande valeur est %d",*pC);
+    }
+    /*
+    (*pA>*pB && *pA>*pC)?printf("La plus grande valeur est %d",*pA):(*pB>*pA && *pB>*pC)?printf("La plus grande valeur est %d",*pB):(*pC>*pA && *pC>*pB)?printf("La plus grande valeur est %d",*pC):printf("Egalité");
+    */
+	return 0;
+}

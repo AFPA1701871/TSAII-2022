@@ -1,0 +1,35 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+//Avec affectation de valeurs directes
+/*
+int main()
+{
+    int a,b;
+    int* pA=&a;
+    int* pB=&b;
+    *pA = 10;
+    *pB = 2;
+    printf("Le resultat de la multiplication entre %d et %d est %d",*pA,*pB,*pA * *pB);
+
+
+    return 0;
+}
+*/
+
+//Avec saisie de valeurs par utilisateur
+int main()
+{
+    int a,b;
+    int* pA=&a;
+    int* pB=&b;    
+    
+    printf("Entrez la valeur de a : ");
+    scanf("%d", pA);
+    printf("Entrez la valeur de b : ");
+    scanf("%d", pB);
+
+    printf("%d * %d = %d",*pA,*pB,*pA * *pB);
+    return 0;
+}
+
