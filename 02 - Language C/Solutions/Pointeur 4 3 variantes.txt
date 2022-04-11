@@ -1,0 +1,61 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+/* Passage par pointeur */
+void ajouteUn(int* adresse)
+{
+    (*adresse)++;
+}
+
+int main()
+{
+    int val;
+    int* pVal=&val;
+    
+    
+    printf("Entrer une valeur : ");
+    scanf("%d",pVal);
+    ajouteUn(pVal);
+    printf("La nouvelle valeur est : %d",*pVal);
+    return 0;
+}
+
+
+*/
+/*
+Methode directe
+int ajouteUn(int valeur)
+{
+    return valeur++;
+}
+
+int main()
+{
+    int val;
+    printf("Entrer une valeur : ");
+    scanf("%d",&val);
+    
+    val = ajouteUn(val);
+    printf("La nouvelle valeur est : %d",val);
+    return 0;
+}
+*/
+
+/* Passage par adresse */
+
+void ajouteUn(int *adresse)
+{
+    return (*adresse)++;
+}
+
+int main()
+{
+    int val;
+    printf("Entrer une valeur : ");
+    scanf("%d",&val);
+    
+    ajouteUn(&val);
+    printf("La nouvelle valeur est : %d",val);
+    return 0;
+}
+

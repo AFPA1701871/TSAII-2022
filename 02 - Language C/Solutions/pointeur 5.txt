@@ -1,0 +1,29 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include<string.h>
+
+int main()
+{
+    
+    int tailleMot,i,nombreLettre=0;
+    int* pTailleMot=&tailleMot,*pNombreLettre=&nombreLettre;
+    char mot[50],lettre;
+    char* pMot=mot,* pLettre=&lettre;
+    
+    
+    printf("Veuillez saisir un mot : ");
+    scanf("%s",pMot);
+    *pTailleMot=strlen(pMot);
+    printf("\nQuelle lettre voulais vous tester ? ");
+    fflush(stdin);
+    scanf("%c",pLettre);
+    for (i=0; i<*pTailleMot; i++)
+    {
+        if (*(pMot+i)==*pLettre)  // mot[i]==lettre
+        {
+            (*pNombreLettre)++;
+        }
+    }
+    printf("\nIl y a %d %c dans %s",*pNombreLettre,*pLettre,pMot);
+    return 0;
+}
