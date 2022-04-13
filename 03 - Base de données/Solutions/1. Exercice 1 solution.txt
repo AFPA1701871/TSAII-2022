@@ -1,10 +1,16 @@
 Ecrivez des requêtes SELECT (A chaquefois ,vous stockerez la requete dans un fichier texte» pour
 a. Affichez la totalité de la table « client ».
+SELECT * FROM `clients`
+
 b. Affichez les noms de tous les clients.
+SELECT `nomClient`,`prenomClient` FROM `clients`
 c. Affichez les différentes dates de commandes sans répétition.
+SELECT DISTINCT `dateCommande` FROM `commandes` 
 d. Affichez les clients qui se prénomment « sophie ».
+SELECT * FROM `clients` WHERE `prenomClient`="Sophie" 
 e. Affichez les numéros des articles et leur quantité commandés par le client 2.
-f. Affichez les noms des clients en majuscules-.
+SELECT `idArticle`,`quantiteCommande` FROM `commandes` WHERE `idClient`=2 
+f. Affichez les noms des clients en majuscules.
 g. Affichez les noms des clients avec la première lettre en majuscule.
 h. Affichez les noms des clients qui ont 5caractères.
 i. Affichez les noms des clients qui commencent par « t » ou qui ont un « l » en troisième position.
@@ -13,7 +19,7 @@ attendue des commandes (=date_cde+15jours).
 k. Affichez la date et l'heure actuelles.
 l. Affichez l'ancienneté des clients.
 m. Affichez la quantité maximale achetée par un client.
-n. Affichez la quantité totale achetée par le client2.
+n. Affichez la quantité totale achetée par le client1.
 o. Affichez la quantité moyenne achetée par le client 2.
 p. Affichez les clients classés par ordre alphabétique de leur nom.
 q. Affichez les articles classés selon leur prix décroissant. 
