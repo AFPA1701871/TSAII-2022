@@ -11,15 +11,56 @@ SELECT * FROM `clients` WHERE `prenomClient`="Sophie"
 e. Affichez les numéros des articles et leur quantité commandés par le client 2.
 SELECT `idArticle`,`quantiteCommande` FROM `commandes` WHERE `idClient`=2 
 f. Affichez les noms des clients en majuscules.
+SELECT UPPER(`nomClient`) FROM `clients` 
 g. Affichez les noms des clients avec la première lettre en majuscule.
+SELECT
+    CONCAT(
+        UPPER(MID(`nomClient`, 1, 1)),
+        LOWER(MID(`nomClient`, 2))
+    ) AS NomClient
+FROM
+    `clients`
 h. Affichez les noms des clients qui ont 5caractères.
+SELECT
+`nomClient`
+FROM
+    `clients`
+    WHERE LENGTH(`nomClient`)=5
 i. Affichez les noms des clients qui commencent par « t » ou qui ont un « l » en troisième position.
+SELECT
+`nomClient`
+FROM
+    `clients`
+    WHERE `nomClient` LIKE 'T%' OR `nomClient` LIKE "__l%"
 j. Affichez le numéro de client, le numéro de commande, la date de commande et la date de paiement
 attendue des commandes (=date_cde+15jours).
+SELECT
+    `idClient`,
+    `idCommande`,
+    dateCommande,
+    ADDDATE(`dateCommande`, INTERVAL 15 DAY) AS "date paiement attendue"
+FROM
+    `commandes`
 k. Affichez la date et l'heure actuelles.
+select now();
 l. Affichez l'ancienneté des clients.
+SELECT TIMESTAMPDIFF(YEAR,`dateEntreeClient`,NOW()) as "anciennete client" FROM `clients`;
 m. Affichez la quantité maximale achetée par un client.
-n. Affichez la quantité totale achetée par le client1.
+SELECT `idClient`, MAX(`quantiteCommande`) as "Max quantité commandée" FROM `commandes` GROUP BY `idClient`
+n. Affichez la quantité totale achetée par le client2.
+SELECT
+`idClient`, SUM(`quantiteCommande`) AS "Quantité totale"
+FROM
+    `commandes`
+WHERE `idClient`=2
+GROUP BY `idClient`;
 o. Affichez la quantité moyenne achetée par le client 2.
+SELECT `idClient`,ROUND(AVG(`quantiteCommande`),2) AS "Moyenne quantité" FROM `commandes` WHERE `idClient`=2 GROUP BY `idClient` 
 p. Affichez les clients classés par ordre alphabétique de leur nom.
+SELECT * FROM `clients` ORDER BY nomClient
 q. Affichez les articles classés selon leur prix décroissant. 
+SELECT
+    *
+FROM
+    `articles`
+ORDER BY `prixArticle` DESC

@@ -63,3 +63,11 @@ INSERT INTO typepiece (idType, Type) VALUES
 ALTER TABLE pieces
   ADD CONSTRAINT FK_pieces_idMarque FOREIGN KEY (idMarque) REFERENCES marque (idMarque),
   ADD CONSTRAINT FK_pieces_idType FOREIGN KEY (idType) REFERENCES typepiece (idType);
+
+SELECT
+    CONCAT(
+        UPPER(MID(`nomClient`, 1, 1)),
+        LOWER(MID(`nomClient`, 2))
+    ) AS NomClient
+FROM
+    `clients`
