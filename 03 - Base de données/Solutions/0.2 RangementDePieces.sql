@@ -1,6 +1,6 @@
 -- Création Base de données
 CREATE DATABASE RangerPieces;
-USE DATABASE RangerPieces;
+USE RangerPieces;
 
 -- Création des tables
 DROP TABLE IF EXISTS marque;
