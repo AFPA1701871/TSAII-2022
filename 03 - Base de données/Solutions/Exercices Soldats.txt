@@ -1,0 +1,19 @@
+1. Toutes les blesses (noms et prenoms ) à la bataille de Pepingen
+SELECT soldats.nom_soldat, soldats.prenom_soldat, batailles.lieu_bataille FROM soldats INNER JOIN blesses ON soldats.idSoldat = blesses.idSoldat INNER JOIN batailles ON blesses.idBataille = batailles.idBataille WHERE batailles.lieu_bataille = "pepingen" 
+
+2. Les soldats et leurs unités
+SELECT soldats.nom_soldat, soldats.prenom_soldat, unites.libelle_unite
+FROM soldats
+INNER JOIN affectation ON affectation.idSoldat = soldats.idSoldat
+INNER JOIN unites ON affectation.idUnite = unites.idUnite
+3. Les soldats avec leurs grades et la date de promotion
+SELECT soldats.nom_soldat, soldats.prenom_soldat, grades.libelle_grade, promotions.date_promotion FROM promotions INNER JOIN soldats ON promotions.idSoldat = soldats.idSoldat INNER JOIN grades ON promotions.idGrade = grades.idGrade ORDER BY soldats.nom_soldat, promotions.date_promotion 
+4. Les soldats et leurs blessures avec la date de blessure
+SELECT soldats.nom_soldat, soldats.prenom_soldat, blessures.type_blessure, blesses.date_Blessure FROM blesses INNER JOIN soldats ON blesses.idSoldat = soldats.idSoldat INNER JOIN blessures ON blesses.idblessure = blessures.idblessure 
+5. Les différentes blessures et leurs batailles
+SELECT DISTINCT batailles.lieu_bataille,blessures.type_blessure FROM blesses INNER JOIN blessures ON blesses.idblessure = blessures.idblessure INNER JOIn batailles ON blesses.idBataille = batailles.idBataille ORDER BY batailles.lieu_bataille 
+6. Le nombre de blessures par grade
+7. Le nombre de fractures à la bataille Pepingen
+8. La moyenne des types de blessures par bataille
+9. Le nombre de soldat par grade
+10. Les types de blessures par grade
